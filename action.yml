@@ -240,11 +240,9 @@ runs:
         path: |
           */bin/
           *\bin\*
-          /Applications/${{inputs.build-name}}.pkg
     - name: Release
       uses: softprops/action-gh-release@v1
       if: inputs.package == 'true' && startsWith(github.ref, 'refs/tags/')
       with:
         files: |
           */bin/*
-          /Applications/${{inputs.build-name}}.pkg
